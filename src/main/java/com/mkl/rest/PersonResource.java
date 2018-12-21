@@ -3,8 +3,11 @@ package com.mkl.rest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mkl.data.JpaConnection;
+import com.mkl.data.entities.InfoEntity;
 import com.mkl.data.entities.Person;
+import com.mkl.data.repositories.SharedQueriesRepository;
 import com.mkl.logic.facades.PersonFacade;
+import com.mkl.logic.facades.SharedQueriesFacade;
 import com.mkl.rest.dto.PersonDTO;
 import com.mkl.rest.genericRest.BaseRest;
 
@@ -20,6 +23,7 @@ public class PersonResource
 {
 	private static Gson                        gson     = new GsonBuilder().setPrettyPrinting().create();
 	private PersonFacade personFacade = new PersonFacade(JpaConnection.getEntityManagerFactory());
+	private SharedQueriesFacade sharedQueriesFacade = new SharedQueriesFacade(JpaConnection.getEntityManagerFactory());
 	private        BaseRest<Person, PersonDTO> baseRest =
 			new BaseRest<>(
 					Person.class,
@@ -36,6 +40,19 @@ public class PersonResource
 		return Response.ok(gson.toJson(new PersonDTO().convertToSet(persons))).build();
 	}
 
+
+	/*
+	@GET
+	@Path("{phoneNumber}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getPersonByPhoneNumber(@PathParam("phoneNumber") int phoneNumber)
+	{
+		//Person     p    = personFacade.getPersonByPhoneNumber(phoneNumber);
+		InfoEntity p    = sharedQueriesFacade.findPersonOrCompanyByPhone(phoneNumber);
+		PersonDTO  pDTO = PersonDTO.fullPerson((Person) p);
+		return Response.ok(gson.toJson(pDTO)).build();
+	} */
+
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -43,6 +60,9 @@ public class PersonResource
 	{
 		return baseRest.post(content);
 	}
+
+
+
 
 
 }

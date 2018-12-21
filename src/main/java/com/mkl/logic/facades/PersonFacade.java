@@ -14,6 +14,10 @@ public class PersonFacade implements Facade<Person>
 		personRepository = new PersonRepository(emf);
 	}
 
+	public Person getPersonByPhoneNumber(int phoneNumber) {
+		return personRepository.getPersonByPhone(phoneNumber);
+	}
+
 	@Override public Set<Person> get()
 	{
 		return personRepository.getAllPerson();

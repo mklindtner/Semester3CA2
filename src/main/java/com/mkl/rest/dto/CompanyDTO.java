@@ -21,10 +21,10 @@ public class CompanyDTO implements BaseDTOMapper<Company, CompanyDTO>
 
 	@Override public CompanyDTO apply(Company company)
 	{
-		return basic(company);
+		return full(company);
 	}
 
-	public static CompanyDTO basic(Company company) {
+	public static CompanyDTO full(Company company) {
 		return new CompanyDTO(company.getName(), company.getDescription(), company.getNumEmployees(), company.getCvr(),
 							  company.getMarketValue(), company.getId());
 	}
