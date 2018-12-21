@@ -2,7 +2,7 @@ package com.mkl.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mkl.data.JPAConnection;
+import com.mkl.data.JpaConnection;
 import com.mkl.data.entities.AnyObject;
 import com.mkl.logic.facades.AnyObjectFacade;
 import com.mkl.rest.dto.AnyObjectDTO;
@@ -24,7 +24,7 @@ public class AnyObjectResource
 			new BaseRest<AnyObject, AnyObjectDTO>(
 					AnyObject.class,
 					new AnyObjectDTO(),
-					new AnyObjectFacade(JPAConnection.getEntityManagerFactory())
+					new AnyObjectFacade(JpaConnection.getEntityManagerFactory())
 			);
 
 	@GET
@@ -66,6 +66,6 @@ public class AnyObjectResource
 	/* normal way:
 		AnyObject anyObject = gson.fromJson(content, AnyObject.class);
 		AnyObject anyObjectCreated = anyObjectFacade.createAnyObject(anyObject);
-		return Response.ok(gson.toJson(AnyObjectDTO.basic(anyObjectCreated))).build(); */
+		return Response.ok(gson.toJson(AnyObjectDTO.fullPerson(anyObjectCreated))).build(); */
 
 }

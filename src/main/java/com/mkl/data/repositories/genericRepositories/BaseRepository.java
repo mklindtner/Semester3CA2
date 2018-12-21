@@ -37,7 +37,7 @@ public class BaseRepository<E, PK> implements CRUDOperations<E, PK>
 		List<E>       results = null;
 		try {
 			results = em.createQuery("SELECT e FROM " + entityClass.getSimpleName() + " e", entityClass)
-						.getResultList();
+					.getResultList();
 		} finally {
 			em.close();
 			return new HashSet<E>(results);

@@ -2,7 +2,6 @@ package com.mkl.rest.genericRest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mkl.data.JPAConnection;
 import com.mkl.data.repositories.genericRepositories.BaseRepository;
 import com.mkl.logic.facades.Facade;
 import com.mkl.rest.dto.BaseDTOMapper;
@@ -24,17 +23,9 @@ public class BaseRest<E, EDTO>
 	public BaseRest(Class<E> entityClass, BaseDTOMapper<E, EDTO> dtoMapper, Facade facade)
 	{
 		this.entityClass = entityClass;
-		//crudOperations = new BaseRepository<E, Integer>(entityClass, JPAConnection.getEntityManagerFactory());
 		baseDTOMapper = dtoMapper;
 		this.facade = facade;
 	}
-/*
-	public Response get()
-	{
-		return Response
-				.ok(gson.toJson(baseDTOMapper.convertToSet(crudOperations.get())))
-				.build();
-	}*/
 
 	public Response get()
 	{
