@@ -1,5 +1,7 @@
 package com.mkl.data.entities;
 
+import org.hibernate.engine.profile.Fetch;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +17,7 @@ public class Hobby
 			CascadeType.PERSIST,
 			CascadeType.MERGE
 	})
-	@JoinTable(name = "person_hobby",
+	@JoinTable(name= "person_hobby",
 			   joinColumns = @JoinColumn(name = "hobby_id"),
 			   inverseJoinColumns = @JoinColumn(name = "person_id"))
 	private Set<Person> persons = new HashSet<>();

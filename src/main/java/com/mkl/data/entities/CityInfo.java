@@ -22,4 +22,26 @@ public class CityInfo
 	public CityInfo()
 	{
 	}
+
+	public Set<Address> getAddresses()
+	{
+		return this.addresses;
+	}
+
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public int getZipcode()
+	{
+		return this.zipcode;
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+
 }

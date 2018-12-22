@@ -14,9 +14,16 @@ public class PersonFacade implements Facade<Person>
 		personRepository = new PersonRepository(emf);
 	}
 
-	public Person getPersonByPhoneNumber(int phoneNumber) {
-		return personRepository.getPersonByPhone(phoneNumber);
+	public Set<Person> getPersonByZipcode(int zipcode) {
+		return personRepository.personsByZipcode(zipcode);
 	}
+
+	public Set<Person> getPersonByHobby(String hobbyName)
+	{
+		return personRepository.personsByHobby(hobbyName);
+	}
+
+
 
 	@Override public Set<Person> get()
 	{
@@ -41,5 +48,10 @@ public class PersonFacade implements Facade<Person>
 	@Override public Person delete(int id)
 	{
 		throw new UnsupportedOperationException("lol more");
+	}
+
+	public int getPersonCountByHobby(String hobbyName)
+	{
+		return personRepository.personsCountByHobby(hobbyName);
 	}
 }

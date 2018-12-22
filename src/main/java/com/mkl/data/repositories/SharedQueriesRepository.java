@@ -20,7 +20,8 @@ public class SharedQueriesRepository
 		EntityManager em = emf.createEntityManager();
 		InfoEntity        infoEntity  = null;
 		try {
-			TypedQuery<InfoEntity> query = em.createQuery("Select p FROM infoEntity p LEFT JOIN phone ph ON p.id = ph .infoEntities.id WHERE ph.number=:number", InfoEntity.class);
+			TypedQuery<InfoEntity> query =
+					em.createQuery("Select p FROM infoEntity p LEFT JOIN phone ph ON p.id = ph .infoEntities.id WHERE ph.number=:number", InfoEntity.class);
 			query.setParameter("number", phoneNumber);
 			infoEntity = query.getSingleResult();
 		} catch (Exception e) {

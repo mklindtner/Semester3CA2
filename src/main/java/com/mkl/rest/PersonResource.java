@@ -41,6 +41,27 @@ public class PersonResource
 	}
 
 
+	@GET
+	@Path("hobby/{hobbyName}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getPersonsByHobby(@PathParam("hobbyName") String hobbyName) {
+		Set<Person> persons = personFacade.getPersonByHobby(hobbyName);
+		return Response.ok(gson.toJson(new PersonDTO().convertToSet(persons))).build();
+	}
+
+	@GET
+	@Path("city/{zipCode}")
+	public Response getPersonsByZipcode(@PathParam("zipCode") int zipCode) {
+		Set<Person> persons = personFacade.getPersonByZipcode(zipCode);
+		return Response.ok(gson.toJson(new PersonDTO().convertToSet(persons))).build();
+	}
+
+	@GET
+	@Path("hobby/count/{hobbyName}")
+	public Response getPersonCountByName(@PathParam("hobbyName") String hobbyName) {
+		return Response.ok(gson.toJson(personFacade.getPersonCountByHobby(hobbyName))).build();
+	}
+
 	/*
 	@GET
 	@Path("{phoneNumber}")
