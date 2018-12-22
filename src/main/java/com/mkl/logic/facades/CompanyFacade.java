@@ -37,4 +37,9 @@ public class CompanyFacade implements Facade<Company>
 	{
 		throw new UnsupportedOperationException("lol");
 	}
+
+	public Set<Company> getByNumOfEmployees(int employeeAmount)
+	{
+		return companyRepository.getCompaniesByEmployeeNumber(employeeAmount);
+	}
 }

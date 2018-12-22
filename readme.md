@@ -19,3 +19,7 @@ Get the count of people with a given hobby
 Get a list of all zip codes in denmark
   localhost:port/api/cityInfo/nation/zipcodes
   ex. http://localhost:8081/api/cityInfo/denmark/zipcodes
+  
+Get a list of companies with more than xx employes
+  localhost:port/api/company/employees/amountOfEmployees
+  ex. http://localhost:8081/api/company/employees/15
