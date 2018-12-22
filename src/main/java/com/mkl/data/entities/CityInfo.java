@@ -16,7 +16,7 @@ public class CityInfo
 	@Column
 	private String name;
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private Set<Address> addresses;
 
 	public CityInfo()
