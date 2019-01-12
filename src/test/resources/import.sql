@@ -16,33 +16,33 @@ INSERT INTO hobby (id, name, description) VALUES (10, 'Acting', 'Acting is an ac
 INSERT INTO hobby (id, name, description) VALUES (11, 'Painting', 'Painting is the practice of applying paint, pigment, color or other medium to asolid surface (support base). The medium is commonly applied to the base with a brush, but other implements, such as knives, sponges, and airbrushes, can be used. The final work is also called a painting.');
 INSERT INTO hobby (id, name, description) VALUES (12, 'Dance', 'Dance is a performing art form consisting of purposefully selected sequences of human movement. This movement has aesthetic and symbolic value, and is acknowledged as dance by performers and observers within a particular culture.');
 
-INSERT INTO `address` (`id`, `information`, `street`, `city_id`) VALUES (1, '82', 'Milanovicvej', 1);
-INSERT INTO `person` (`ID`, `EMAIL`, `FIRSTNAME`, `LASTNAME`, `ADDRESS_ID`) VALUES (1, 'nicolai-mikkelsen-1@protonmail.io', 'Nicolai', 'Mikkelsen', 1);
-INSERT INTO `phone` (`ID`, `DESCRIPTION`, `NUMBER`, `infoEntity_id`) VALUES (1, 'Hjem', '13990653', 1);
+INSERT INTO address (id, information, street, city_id) VALUES (1, '82', 'Milanovicvej', 1);
+INSERT INTO person (ID, EMAIL, FIRSTNAME, LASTNAME, ADDRESS_ID) VALUES (1, 'nicolai-mikkelsen-1@protonmail.io', 'Nicolai', 'Mikkelsen', 1);
+INSERT INTO phone (ID, DESCRIPTION, number, infoEntity_id) VALUES (1, 'Hjem', '13990653', 1);
 
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (1, 8);
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (1, 4);
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (1, 7);
 
-INSERT INTO `address` (`id`, `information`, `street`, `city_id`) VALUES (2, '290', 'Milanovicvej', 2);
-INSERT INTO `person` (`ID`, `EMAIL`, `FIRSTNAME`, `LASTNAME`, `ADDRESS_ID`) VALUES (2, 'anna-kaspersen-2@hotmail.eu', 'Anna', 'Kaspersen', 2);
-INSERT INTO `phone` (`ID`, `DESCRIPTION`, `NUMBER`, `infoEntity_id`) VALUES (2, 'Hjem', '57207152', 2);
+INSERT INTO address (id, information, street, city_id) VALUES (2, '290', 'Milanovicvej', 2);
+INSERT INTO person (ID, EMAIL, FIRSTNAME, LASTNAME, ADDRESS_ID) VALUES (2, 'anna-kaspersen-2@hotmail.eu', 'Anna', 'Kaspersen', 2);
+INSERT INTO phone (ID, DESCRIPTION, number, infoEntity_id) VALUES (2, 'Hjem', '57207152', 2);
 
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (2, 3);
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (2, 11);
 
-INSERT INTO `address` (`id`, `information`, `street`, `city_id`) VALUES (3, '24', 'Ryllevej', 3);
-INSERT INTO `person` (`ID`, `EMAIL`, `FIRSTNAME`, `LASTNAME`, `ADDRESS_ID`) VALUES (3, 'jacob-behrendt-3@gmail.dk', 'Jacob', 'Behrendt', 3);
-INSERT INTO `phone` (`ID`, `DESCRIPTION`, `NUMBER`, `infoEntity_id`) VALUES (3, 'Bil', '49235055', 3);
+INSERT INTO address (id, information, street, city_id) VALUES (3, '24', 'Ryllevej', 3);
+INSERT INTO person (ID, EMAIL, FIRSTNAME, LASTNAME, ADDRESS_ID) VALUES (3, 'jacob-behrendt-3@gmail.dk', 'Jacob', 'Behrendt', 3);
+INSERT INTO phone (ID, DESCRIPTION, number, infoEntity_id) VALUES (3, 'Bil', '49235055', 3);
 
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (3, 5);
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (3, 4);
 INSERT INTO person_hobby (person_id, hobby_id) VALUES (3, 10);
 
-INSERT INTO `address` (`id`, `information`, `street`, `city_id`) VALUES (301, '113', 'Milanovicvej', 1);
-Insert INTO `company` (`id`, `email`, `address_id`, `cvr`, `description`, `marketValue`, `name`, `numEmployees`) VALUES (301, 'company1@email', 301, 1337, 'desc1 of smth', 99999, 'bobs & o', 25);
-INSERT INTO `phone` (`ID`, `DESCRIPTION`, `NUMBER`, `infoEntity_id`) VALUES (513, 'Arbejde', '7482992', 301);
-INSERT INTO `phone` (`ID`, `DESCRIPTION`, `NUMBER`, `infoEntity_id`) VALUES (514, 'Feriehjem', '54393336', 301);
+INSERT INTO address (id, information, street, city_id) VALUES (301, '113', 'Milanovicvej', 1);
+Insert INTO company (id, email, address_id, cvr, description, marketValue, name, numEmployees) VALUES (301, 'company1@email', 301, 1337, 'desc1 of smth', 99999, 'bobs & o', 25);
+INSERT INTO phone (ID, DESCRIPTION, number, infoEntity_id) VALUES (513, 'Arbejde', 7482992, 301);
+INSERT INTO phone (ID, DESCRIPTION, number, infoEntity_id) VALUES (514, 'Feriehjem', 54393336, 301);
 
 
 

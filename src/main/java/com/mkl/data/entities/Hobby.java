@@ -33,6 +33,12 @@ public class Hobby
 	{
 	}
 
+	public Hobby(String name, String description)
+	{
+		this.name = name;
+		this.description = description;
+	}
+
 	public Set<Person> getPersons()
 	{
 		return this.persons;
@@ -66,5 +72,14 @@ public class Hobby
 	public int getId()
 	{
 		return this.id;
+	}
+
+	@Override public String toString()
+	{
+		return "Hobby{" +
+			   "id=" + id +
+			   ", name='" + name + '\'' +
+			   ", description='" + description + '\'' +
+			   '}';
 	}
 }

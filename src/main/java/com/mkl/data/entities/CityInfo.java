@@ -43,5 +43,9 @@ public class CityInfo
 		return this.name;
 	}
 
-
+	public CityInfo(int zipcode, String name)
+	{
+		this.zipcode = zipcode;
+		this.name = name;
+	}
 }
